@@ -8,7 +8,7 @@ Run the following command to start up cassandra:
 
 `docker-compose -f docker-compose.yml up`
 
-[Triton](https://github.com/blitzstudios/triton) is an Elixir Cassandra ORM built on top on [Xandra](https://github.com/lexhide/xandra) and we will be using it to interact with our cassandra nodes.
+[Triton](https://github.com/blitzstudios/triton) is an Elixir Cassandra ORM built on top of [Xandra](https://github.com/lexhide/xandra), an Elixir Cassandra Driver. We will be using Triton and Xandra to interact with our cassandra nodes.
 
 The phoenix api project was generated with options `--no-html`, `--no-ecto`, and `--no-webpack` as Triton has no dependency on Ecto.
 
