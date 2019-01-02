@@ -10,7 +10,7 @@ Run the following command to start up cassandra:
 
 [Triton](https://github.com/blitzstudios/triton) is an Elixir Cassandra ORM built on top of [Xandra](https://github.com/lexhide/xandra), an Elixir Cassandra Driver. We will be using Triton and Xandra to interact with our cassandra nodes.
 
-# Important note:
+Important note:
 
 When setting up your keyspace, if you're working in dev with a single Cassandra node, the replication factor has to be set to 1 or the default Quorum consistency level will throw a fit since it'll want a 2/3 majority but there's only 1 node.
 
