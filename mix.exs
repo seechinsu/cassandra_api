@@ -19,7 +19,7 @@ defmodule CassandraApi.MixProject do
   def application do
     [
       mod: {CassandraApi.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :triton]
     ]
   end
 
