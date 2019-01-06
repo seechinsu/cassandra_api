@@ -2,7 +2,7 @@
 
 A simple REST api with Elixir, Phoenix Framework, and Cassandra.
 
-Docker compose file is used to bring up a cassandra container with port 9042 exposed.
+Docker compose file is used to bring up a Cassandra container with port 9042 exposed along with a DataStax Studio container as a GUI to interact with Cassandra.
 
 Run the following command to start up cassandra:
 
