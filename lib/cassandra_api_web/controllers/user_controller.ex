@@ -18,5 +18,9 @@ defmodule CassandraApiWeb.UserController do
     render(conn, "user.json", user: user)
   end
 
+  def index(conn, _params) do
+    {:ok, users} = Accounts.list_users()
+    render(conn, "index.json", users: users)
+  end
 
 end

@@ -24,7 +24,7 @@ config :triton,
       underlying_pool: DBConnection.Poolboy,
       pool_size: 10,
       keyspace: "seraph",
-      authentication: {Xandra.Authenticator.Password, [username: "cassandra", password: "cassandra"]},
+      #authentication: {Xandra.Authenticator.Password, [username: "cassandra", password: "cassandra"]},
       health_check_delay: 2500,  # optional: (default is 5000)
       health_check_interval: 500  # optional: (default is 1000)
     ]

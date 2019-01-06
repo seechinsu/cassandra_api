@@ -1,6 +1,24 @@
 version: '3'
 services:
   cassandra:
-    image: bitnami/cassandra:latest
+    image: datastax/dse-server:latest
+    container_name: cassandra
+    networks:
+      - cassandra_network
+    environment:
+      - "DS_LICENSE=accept"
     ports:
       - 9042:9042
+  d-studio:
+    image: datastax/dse-studio:latest
+    container_name: dsestudio
+    links: 
+      - cassandra
+    networks:
+      - cassandra_network
+    environment:
+      - "DS_LICENSE=accept"
+    ports:
+      - 9091:9091
+networks:
+  cassandra_network:

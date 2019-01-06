@@ -27,4 +27,10 @@ defmodule CassandraApi.Accounts do
     |> User.one
   end
 
+  def list_users do
+    User
+    |> select(:all)
+    |> User.all
+  end
+
 end
