@@ -6,9 +6,13 @@ Docker compose file is used to bring up a cassandra container with port 9042 exp
 
 Run the following command to start up cassandra:
 
-`docker-compose -f docker-compose.yml up`
+`docker-compose -f cassandra-single-node.yml up`
 
 [Triton](https://github.com/blitzstudios/triton) is an Elixir Cassandra ORM built on top of [Xandra](https://github.com/lexhide/xandra), an Elixir Cassandra Driver. We will be using Triton and Xandra to interact with our cassandra nodes.
+
+Important note:
+
+When setting up your keyspace, if you're working in dev with a single Cassandra node, the replication factor has to be set to 1 or the default Quorum consistency level will throw a fit since it'll want a 2/3 majority but there's only 1 node.
 
 The phoenix api project was generated with options `--no-html`, `--no-ecto`, and `--no-webpack` as Triton has no dependency on Ecto.
 
