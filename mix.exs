@@ -37,7 +37,8 @@ defmodule CassandraApi.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:triton, "~> 0.2.4"}
+      {:triton, "~> 0.2.4"},
+      {:uuid, "~> 1.1.8"}
     ]
   end
 end

@@ -19,14 +19,18 @@ config :triton,
   clusters: [
     [
       conn: Triton.Conn,
+      # nodes: ["127.0.0.1:9042", "127.0.0.1:9041", "127.0.0.1:9043"],
       nodes: ["127.0.0.1:9042"],
       pool: Xandra.Cluster,
       underlying_pool: DBConnection.Poolboy,
       pool_size: 10,
       keyspace: "seraph",
-      #authentication: {Xandra.Authenticator.Password, [username: "cassandra", password: "cassandra"]},
-      health_check_delay: 2500,  # optional: (default is 5000)
-      health_check_interval: 500  # optional: (default is 1000)
+      authentication:
+        {Xandra.Authenticator.Password, [username: "cassandra", password: "cassandra"]},
+      # optional: (default is 5000)
+      health_check_delay: 2500,
+      # optional: (default is 1000)
+      health_check_interval: 500
     ]
   ]
 

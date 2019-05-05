@@ -1,27 +1,37 @@
-version: '3'
+version: "3"
 services:
   cassandra-node1:
-    image: bitnami/cassandra:latest
-    networks: cassandra_network
+    image: datastax/dse-server:latest
+    container_name: cassandra-1
+    networks:
+      - cassandra_network
     environment:
       - CASSANDRA_CLUSTER_NAME=cassandra-cluster
       - CASSANDRA_SEEDS=cassandra-node1,cassandra-node2,cassandra-node3
+      - CASSANDRA_PASSWORD_SEEDER=yes
+      - DS_LICENSE=accept
     ports:
       - 9041:9042
   cassandra-node2:
-    image: bitnami/cassandra:latest
-    networks: cassandra_network
+    image: datastax/dse-server:latest
+    container_name: cassandra-2
+    networks:
+      - cassandra_network
     environment:
       - CASSANDRA_CLUSTER_NAME=cassandra-cluster
       - CASSANDRA_SEEDS=cassandra-node1,cassandra-node2,cassandra-node3
+      - DS_LICENSE=accept
     ports:
       - 9042:9042
   cassandra-node3:
-    image: bitnami/cassandra:latest
-    networks: cassandra_network
+    image: datastax/dse-server:latest
+    container_name: cassandra-3
+    networks:
+      - cassandra_network
     environment:
       - CASSANDRA_CLUSTER_NAME=cassandra-cluster
       - CASSANDRA_SEEDS=cassandra-node1,cassandra-node2,cassandra-node3
+      - DS_LICENSE=accept
     ports:
       - 9043:9042
 
