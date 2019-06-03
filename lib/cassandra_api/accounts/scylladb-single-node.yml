@@ -1,0 +1,16 @@
+version: "3"
+services:
+  scylla:
+    image: scylladb/scylla:latest
+    container_name: scylladb
+    ports:
+      - 9042:9042
+    volumes:
+      #  - ${PWD}/scylla:/var/lib/scylla
+      - ${PWD}/scylla_config/scylla.yaml:/etc/scylla/scylla.yaml
+    restart: always
+    networks:
+      - scylla_network
+
+networks:
+  scylla_network: {}

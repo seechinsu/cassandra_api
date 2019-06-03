@@ -8,6 +8,7 @@ defmodule CassandraApiWeb.Router do
   scope "/api", CassandraApiWeb do
     pipe_through :api
 
+    get "/users", UserController, :get_by_email
     resources "/users", UserController
   end
 end

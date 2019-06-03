@@ -19,7 +19,11 @@ defmodule CassandraApiWeb.ErrorView do
   end
 
   def render("404.json", _assigns) do
-    %{errors: %{detail: "Endpoint not found!"}}
+    %{errors: %{detail: "Not found!"}}
+  end
+
+  def render("409.json", _assigns) do
+    %{errors: %{detail: "Duplicate resource!"}}
   end
 
   def render("500.json", _assigns) do

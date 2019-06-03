@@ -1,5 +1,4 @@
 defmodule CassandraApiWeb.UserView do
-
   def render("user.json", %{user: user}) do
     user_json(user)
   end
@@ -16,10 +15,9 @@ defmodule CassandraApiWeb.UserView do
 
   def user_json(user) do
     %{
-      id: user.id,
+      id: UUID.binary_to_string!(user.id),
       email: user.email,
       avatar: user.avatar
     }
   end
-
 end

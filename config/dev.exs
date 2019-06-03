@@ -7,9 +7,9 @@ use Mix.Config
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
 config :cassandra_api, CassandraApiWeb.Endpoint,
-  http: [port: 4001],
+  http: [port: 4002],
   debug_errors: false,
-  code_reloader: true,
+  code_reloader: false,
   check_origin: false,
   watchers: []
 
